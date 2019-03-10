@@ -31,7 +31,6 @@ public class ReadJsonFile {
 			}
 			dataValidation(entityList,entityListToCheck);
 			removeExtraEntitys(entityList);
-//			checkOutofBoundary(entityList);
 				
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -43,30 +42,6 @@ public class ReadJsonFile {
 		return entityList;
 	}
 	
-//	//TODO
-//	private static void checkOutofBoundary(ArrayList<Entity> entityList) {
-//		int smallY = 555;
-//		int mediumY = 550;
-//		int largeY = 545;
-//		int smallX = 778;
-//		int mediumX = 773;
-//		int largeX = 768;
-//		for (int i = 0; i < entityList.size(); i++) {
-//			Entity entity = entityList.get(i);
-//			String size = String.valueOf(entity.getSize());
-//			if ("small".equals(size)) {
-//				
-//			}
-//			else if ("medium".equals(size)) {
-//				
-//			}
-//			else {
-//				
-//			}
-//					
-//		}
-//		
-//	}
 	
 	// Remove extra elements  
 	private static void removeExtraEntitys(ArrayList<Entity> entityList) {

@@ -2,8 +2,8 @@
 	"entity_ID": "1",
 	"name": "Iyana",
 	"color": "red",
-	"shape": "triangle",
+	"shape": "square",
 	"size": "medium",
-	"X": "0",
-	"Y": "0"
+	"X": "101",
+	"Y": "25"
 }]
