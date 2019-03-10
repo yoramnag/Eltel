@@ -21,7 +21,7 @@ public class GameFrame extends JFrame{
 		
 		//entityList = new ArrayList<Entity>();
 		if (entityList.size() == 0 || entityList == null) {
-			JOptionPane.showMessageDialog(null, "there is no data in the JSON file.", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "JSON file was not found or no data was readed from file", "ERROR", JOptionPane.INFORMATION_MESSAGE);
 			setVisible( false );
 		}
 		else {

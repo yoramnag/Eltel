@@ -16,6 +16,7 @@ import java.util.TimerTask;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import enums.Size;
@@ -44,9 +45,22 @@ public class GamePanel extends JPanel implements ActionListener{
 		Utils.mapPaintInfo(paintInfoList, entityList, checkBoxNames);
 		//getPaintInfoList(paintInfoList,entityList,checkBoxNames);
 		getPaintInfoList(paintInfoList);
+		checlPointsForOutofBoundary(paintInfoList);
 		Utils.setRandomNumberList(randomNumberList);
 	}
 	
+	private void checlPointsForOutofBoundary(ArrayList<PaintInfo> paintInfoList) {
+		for (int i = 0; i < paintInfoList.size(); i++) {
+			if (Utils.isOutofBoundary(paintInfoList.get(i))) {
+				paintInfoList.remove(i);
+			}
+		}
+		if (paintInfoList.size() == 0) {
+			JOptionPane.showMessageDialog(null, "there NO entity's to show , all the entity's are Out of Boundary", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+		}
+		
+	}
+
 	private void getPaintInfoList(ArrayList<PaintInfo> paintInfoList) {
 		int zeroX=683;
 		int smallY=555;
@@ -183,7 +197,7 @@ public class GamePanel extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if (e.getSource() == startBtn) {
-			System.out.println("Start");
+			//System.out.println("Start");
 			t = new Timer();
 			t.schedule(new TimerTask() {
 			    @Override
@@ -194,7 +208,7 @@ public class GamePanel extends JPanel implements ActionListener{
 			}, 0, 1000);
 		}
 		else if (e.getSource() == endBtn) {
-			System.out.println("end");
+			//System.out.println("end");
 			t.cancel();
 			Utils.creatreCsv(paintInfoList);
 		}

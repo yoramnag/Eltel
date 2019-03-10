@@ -146,7 +146,7 @@ public class Utils {
 		}
 	}
 
-	private static boolean isOutofBoundary(PaintInfo paintInfo) {
+	public static boolean isOutofBoundary(PaintInfo paintInfo) {
 		if (istriangle(paintInfo.getShape())) {
 			if (paintInfo.getxArray()[1] < 683 || paintInfo.getxArray()[2] > 783 ||
 					paintInfo.getyArray()[1] > 560 || paintInfo.getyArray()[2] > 560 ) {
@@ -219,7 +219,7 @@ public class Utils {
 		}
 		pw.write(builder.toString());
 		pw.close();
-		System.out.println("done!");
+		//System.out.println("done!");
 		
 	}
 	
